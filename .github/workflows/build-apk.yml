@@ -1,3 +1,6 @@
+      - name: Enable AndroidX
+        run: |
+          echo "android.useAndroidX=true" > extracted/android-studio-project/gradle.properties
 name: Build Offline APK
 
 on:
