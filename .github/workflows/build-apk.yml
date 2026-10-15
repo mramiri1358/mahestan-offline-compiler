@@ -1,6 +1,3 @@
-      - name: Enable AndroidX
-        run: |
-          echo "android.useAndroidX=true" > extracted/android-studio-project/gradle.properties
 name: Build Offline APK
 
 on:
@@ -44,6 +41,10 @@ jobs:
           unzip -q "BlockManager-APK-CompilerProject-v1.0.0-fixed.zip" -d extracted
           test -f extracted/android-studio-project/app/build.gradle
           test -f extracted/android-studio-project/app/src/main/AndroidManifest.xml
+
+      - name: Enable AndroidX
+        run: |
+          echo "android.useAndroidX=true" > extracted/android-studio-project/gradle.properties
 
       - name: Build APK
         working-directory: extracted/android-studio-project
